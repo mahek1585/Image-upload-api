@@ -1,105 +1,3 @@
-// import React, { useState } from "react";
-// import axios from "axios";
-
-// const UploadForm = () => {
-//   const [file, setFile] = useState(null);
-//   const [message, setMessage] = useState("");
-//   const [preview, setPreview] = useState(null);
-
-//   const handleFileChange = (e) => {
-//     const selectedFile = e.target.files[0];
-//     setFile(selectedFile);
-//     setPreview(URL.createObjectURL(selectedFile));
-//     setMessage("");
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     if (!file) {
-//       setMessage("Please select a file");
-//       return;
-//     }
-
-//     const formData = new FormData();
-//     formData.append("image", file);
-
-//     try {
-//       const res = await axios.post(
-//         "http://localhost:5000/api/upload",
-//         formData
-//       );
-//       setMessage(res.data.message);
-//     } catch (err) {
-//       setMessage(err.response?.data?.message || "Upload failed");
-//     }
-//   };
-
-//   return (
-//     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-black px-4 sm:px-6">
-      
-//       {/* Card */}
-//       <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 w-full max-w-sm sm:max-w-md md:max-w-lg">
-        
-//         {/* Title */}
-//         <h2 className="text-xl sm:text-2xl font-bold text-center mb-4 sm:mb-6 text-gray-800">
-//           Image Upload
-//         </h2>
-
-//         <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
-          
-//           {/* File Input */}
-//           <label className="flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-xl p-5 sm:p-6 cursor-pointer hover:border-black transition text-center">
-//             <span className="text-gray-600 text-sm sm:text-base mb-2">
-//               Tap or click to choose an image
-//             </span>
-
-//             <span className="text-xs text-gray-400">
-//               JPG, PNG, JPEG supported
-//             </span>
-
-//             <input
-//               type="file"
-//               accept="image/*"
-//               onChange={handleFileChange}
-//               className="hidden"
-//             />
-//           </label>
-
-//           {/* Preview */}
-//           {preview && (
-//             <div className="flex justify-center">
-//               <img
-//                 src={preview}
-//                 alt="Preview"
-//                 className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 object-cover rounded-xl border shadow-sm"
-//               />
-//             </div>
-//           )}
-
-//           {/* Button */}
-//           <button
-//             type="submit"
-//             className="w-full bg-black text-white py-2.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-base hover:bg-gray-800 active:scale-[0.98] transition"
-//           >
-//             Upload Image
-//           </button>
-//         </form>
-
-//         {/* Message */}
-//         {message && (
-//           <p className="text-center mt-4 text-sm sm:text-base text-blue-600 break-words">
-//             {message}
-//           </p>
-//         )}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default UploadForm;
-
-
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -137,9 +35,15 @@ const UploadForm = () => {
     const formData = new FormData();
     formData.append("image", file);
 
-    try {
+    // try {
+    //   const res = await axios.post(
+    //     "http://localhost:5000/api/upload",
+    //     formData
+    //   );
+
+     try {
       const res = await axios.post(
-        "http://localhost:5000/api/upload",
+        "https://image-upload-api-x32u.onrender.com",
         formData
       );
 
