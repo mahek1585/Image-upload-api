@@ -41,11 +41,16 @@ const UploadForm = () => {
     //     formData
     //   );
 
-     try {
-      const res = await axios.post(
-        "https://image-upload-api-x32u.onrender.com",
-        formData
-      );
+     const res = await axios.post(
+  "https://image-upload-api-x32u.onrender.com/api/upload",
+  formData,
+  {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  }
+);
+
 
       setMessage(res.data.message || "Image uploaded successfully ✅");
 
