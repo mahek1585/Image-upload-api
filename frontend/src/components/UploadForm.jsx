@@ -41,6 +41,7 @@ const UploadForm = () => {
     //     formData
     //   );
 
+    try{
      const res = await axios.post(
   "https://image-upload-api-x32u.onrender.com/api/upload",
   formData,
