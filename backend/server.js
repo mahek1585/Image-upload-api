@@ -5,12 +5,15 @@ const cors = require("cors");   // ✅ ADD THIS
 require("dotenv").config();
 
 const app = express();
+app.use(cors());
 
 /* ---------- CORS (MUST BE ON TOP) ---------- */
 app.use(cors({
-  origin: "http://localhost:5173"
+  origin: [
+    "http://localhost:5173",
+    "https://image-uploads-api-actm.onrender.com"
+  ]
 }));
-
 /* ---------- Middleware ---------- */
 app.use(express.json());
 
